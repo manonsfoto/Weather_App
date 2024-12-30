@@ -1,0 +1,14 @@
+.stn-forecast {
+  border: 1px solid brown;
+  width: 55.6rem;
+  border-radius: 2.4rem;
+  padding: 2.4rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: self-start;
+}
+.minicard-wrapper {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}

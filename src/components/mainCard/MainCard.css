@@ -5,6 +5,7 @@
   padding: 2.4rem;
   flex-direction: row;
   justify-content: space-between;
+  align-items: self-start;
 }
 .maincard .location {
   background-color: #363636;
@@ -36,13 +37,12 @@
 .btn-temp-wrapper {
   margin-bottom: 5.4rem;
 }
-.maincard .textbox-left {
-  border: 1px solid red;
-}
+
 .maincard .temp-now {
   font-family: "Inter";
   font-size: 4rem;
   font-weight: 900;
+  margin-bottom: 4.5rem;
 }
 .maincard .desc {
   font-size: 2rem;
@@ -50,4 +50,10 @@
 }
 .maincard .feelslike {
   font-size: 1.6rem;
+}
+.img-weather {
+  width: 20rem;
+  position: relative;
+  left: 8rem;
+  bottom: 1rem;
 }

@@ -1,0 +1,35 @@
+.stn-highlight {
+  border: 1px solid brown;
+  width: 55.6rem;
+  border-radius: 2.4rem;
+  padding: 2.4rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: self-start;
+}
+.stn-highlight .cards-wrapper article {
+  padding: 1.6rem 2.2rem;
+  border-radius: 1.6rem;
+
+  border: 1px solid green;
+
+  text-align: right;
+}
+.stn-highlight .cards-wrapper {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.8rem;
+}
+.stn-highlight .subtitle {
+  font-family: "Montserrat-Medium";
+  font-size: 1.6rem;
+}
+.number-value {
+  font-family: "Montserrat-Bold";
+  font-size: 2.4rem;
+}
+.sun-box {
+  flex-direction: row;
+  width: 26.7rem;
+}

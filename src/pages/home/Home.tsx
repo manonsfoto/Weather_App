@@ -21,7 +21,7 @@ const Home = () => {
         searchInput={searchInput}
         setCityNameInput={setCityNameInput}
       />
-      <WeatherDisplay dataWeather={dataWeather} />
+      <WeatherDisplay dataWeather={dataWeather} cityNameInput={cityNameInput} />
     </>
   );
 };

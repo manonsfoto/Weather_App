@@ -6,13 +6,18 @@ interface MainCardProps {
 }
 const MainCard: React.FC<MainCardProps> = ({ data }) => {
   return (
-    <article className="maincard flex">
+    <section className="maincard flex">
       <div className="textbox-left">
         <p className="location">
           {data.name}, {data.sys.country}
         </p>
         <p className="weekday">{format(Date.now(), "EEEE")}</p>
-        <p className="date-now">{format(Date.now(), "PPP")}</p>
+        <p className="date-now">{format(Date.now(), "PP")}</p>
+        <img
+          className="img-weather"
+          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+          alt={data.weather[0].description}
+        />
       </div>
       <div>
         <div className="btn-temp-wrapper">
@@ -23,7 +28,7 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
         <p className="desc">{data.weather[0].description}</p>
         <p className="feelslike">Feels like {data.main.feels_like}º</p>
       </div>
-    </article>
+    </section>
   );
 };
 
