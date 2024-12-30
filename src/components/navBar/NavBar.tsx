@@ -1,13 +1,25 @@
 import "./NavBar.css";
-
-const NavBar = () => {
+interface NavBarProps {
+  setNavInput: React.Dispatch<React.SetStateAction<string>>;
+}
+const NavBar: React.FC<NavBarProps> = ({ setNavInput }) => {
   return (
     <nav>
-      <button type="button">Düsseldorf</button>
-      <button type="button">Busan</button>
-      <button type="button">Fukuoka</button>
-      <button type="button">Sydney</button>
-      <button type="button">Vancouver</button>
+      <button type="button" onClick={() => setNavInput("Dusseldorf")}>
+        Düsseldorf
+      </button>
+      <button type="button" onClick={() => setNavInput("Busan")}>
+        Busan
+      </button>
+      <button type="button" onClick={() => setNavInput("Fukuoka")}>
+        Fukuoka
+      </button>
+      <button type="button" onClick={() => setNavInput("Sydney")}>
+        Sydney
+      </button>
+      <button type="button" onClick={() => setNavInput("Vancouver")}>
+        Vancouver
+      </button>
     </nav>
   );
 };
