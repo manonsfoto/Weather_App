@@ -2,15 +2,13 @@ import "./SearchBar.css";
 interface SearchBarProps {
   setSearchInput: React.Dispatch<React.SetStateAction<string>>;
   searchInput: string;
-  setNavInput: React.Dispatch<React.SetStateAction<string>>;
+  setCityNameInput: React.Dispatch<React.SetStateAction<string>>;
 }
 const SearchBar: React.FC<SearchBarProps> = ({
   setSearchInput,
   searchInput,
-  setNavInput,
+  setCityNameInput,
 }) => {
-  console.log(searchInput);
-
   return (
     <section>
       <input
@@ -18,11 +16,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
         placeholder="Search by City Name"
         value={searchInput}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          const inputValue = e.target.value.trim();
+          const inputValue = e.target.value;
           setSearchInput(inputValue);
         }}
       />
-      <button type="button" onClick={() => setNavInput(searchInput)}>
+      <button
+        type="button"
+        onClick={() => {
+          setCityNameInput(searchInput.trim());
+          setSearchInput("");
+        }}
+      >
         Search
       </button>
     </section>

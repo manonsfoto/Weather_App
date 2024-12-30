@@ -8,18 +8,18 @@ import { getCurrentURL } from "../../utils/api/Api";
 import SearchBar from "../../components/searchBar/SearchBar";
 
 const Home = () => {
-  const [navInput, setNavInput] = useState<string>("dusseldorf");
+  const [cityNameInput, setCityNameInput] = useState<string>("dusseldorf");
   const [searchInput, setSearchInput] = useState<string>("");
 
-  const dataWeather = useFetch<IDataWeather>(getCurrentURL(navInput));
+  const dataWeather = useFetch<IDataWeather>(getCurrentURL(cityNameInput));
 
   return (
     <>
-      <NavBar setNavInput={setNavInput} />
+      <NavBar setCityNameInput={setCityNameInput} />
       <SearchBar
         setSearchInput={setSearchInput}
         searchInput={searchInput}
-        setNavInput={setNavInput}
+        setCityNameInput={setCityNameInput}
       />
       <WeatherDisplay dataWeather={dataWeather} />
     </>

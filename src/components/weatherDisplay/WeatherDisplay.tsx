@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { IDataWeather } from "../../interface/IDataWeather";
 import "./WeatherDisplay.css";
 interface WeatherDisplayProps {
@@ -10,6 +11,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ dataWeather }) => {
   if (!dataWeather.data) return;
   return (
     <section className="stn-weather-display">
+      <p>{format(Date.now(), "PPPP")}</p>
       <h2>
         {dataWeather.data.weather[0].description} in {dataWeather.data.name}
       </h2>
@@ -20,8 +22,9 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ dataWeather }) => {
       />
       <h2>Now: {dataWeather.data.main.temp}℃</h2>
       <h2>Feels like: {dataWeather.data.main.feels_like}℃</h2>
+      <h2>Humidity: {dataWeather.data.main.humidity}%</h2>
       <h2>
-        Wind Speed: {Math.round(Number(dataWeather.data.wind.speed) * 3.6)}
+        Wind: {Math.round(Number(dataWeather.data.wind.speed) * 3.6)}
         km/h
       </h2>
     </section>
