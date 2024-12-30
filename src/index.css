@@ -1,19 +1,23 @@
-/* @font-face {
-  font-family: "Roboto-Regular";
-  src: url(/public/fonts/Roboto-Regular.ttf);
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(/public/fonts/Montserrat-Regular.ttf);
 }
 @font-face {
-  font-family: "Roboto-Bold";
-  src: url(/public/fonts/Roboto-Bold.ttf);
+  font-family: "Montserrat-Bold";
+  src: url(/public/fonts/Montserrat-Bold.ttf);
 }
 @font-face {
-  font-family: "Roboto-Light";
-  src: url(/public/fonts/Roboto-Light.ttf);
+  font-family: "Montserrat-Light";
+  src: url(/public/fonts/Montserrat-Light.ttf);
 }
 @font-face {
-  font-family: "Roboto-Medium";
-  src: url(/public/fonts/Roboto-Medium.ttf);
-} */
+  font-family: "Montserrat-Medium";
+  src: url(/public/fonts/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/public/fonts/Inter_28pt-Regular.ttf);
+}
 
 * {
   margin: 0;
@@ -22,16 +26,14 @@
 }
 html {
   font-size: 62.5%;
-  font-family: Helvetica, sans-serif;
+  font-family: "Montserrat-Regular", Helvetica, sans-serif;
 }
 body {
   max-width: 1440px;
   margin: 0 auto;
+  border: 1px solid tomato;
 }
-.side-padding {
-  padding-left: 13.5rem;
-  padding-right: 13.5rem;
-}
+
 img {
   max-height: 100%;
 }
@@ -45,24 +47,6 @@ a {
   align-items: center;
   flex-direction: column;
 }
-
 button {
-  width: 22.1rem;
-  height: 7.1rem;
-  font-size: 1.2rem;
-  /* font-family: "Roboto-Regular"; */
-  background-color: #fff;
   cursor: pointer;
-  color: #333333;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-}
-button:hover {
-  background-color: tomato;
-  color: #fff;
-}
-h1 {
-  font-size: 6.4rem;
-  /* font-family: "Roboto-Light"; */
-  color: #bdbdbd;
 }

@@ -1,0 +1,26 @@
+.searchbar input {
+  width: 33.3rem;
+  font-family: "Montserrat-Regular";
+  font-size: 1.8rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 3.6rem;
+  border: 1px solid gray;
+}
+
+.input-wrapper {
+  position: relative;
+}
+.btn-search {
+  position: absolute;
+  border-radius: 0 3.6rem 3.6rem 0;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #fff;
+  left: 29rem;
+
+  border: 1px solid gray;
+}
+.btn-search:hover {
+  background-color: rgb(232, 155, 142);
+}

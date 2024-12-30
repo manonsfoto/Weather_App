@@ -1,0 +1,53 @@
+.maincard {
+  border: 1px solid brown;
+  width: 55.6rem;
+  border-radius: 2.4rem;
+  padding: 2.4rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.maincard .location {
+  background-color: #363636;
+  width: 22.8rem;
+  font-size: 1.8rem;
+  border-radius: 1.6rem;
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+}
+.maincard .weekday {
+  font-family: "Montserrat-Bold";
+  font-size: 3.6rem;
+}
+.maincard .date-now {
+  font-size: 1.6rem;
+}
+.btn-temp-wrapper button {
+  font-family: "Inter";
+  background-color: #fff;
+  border: 1px solid gray;
+  padding: 5px;
+  font-size: 1.8rem;
+  width: 3rem;
+  height: 3rem;
+}
+.btn-temp-wrapper button:hover {
+  background-color: #5fbc47;
+}
+.btn-temp-wrapper {
+  margin-bottom: 5.4rem;
+}
+.maincard .textbox-left {
+  border: 1px solid red;
+}
+.maincard .temp-now {
+  font-family: "Inter";
+  font-size: 4rem;
+  font-weight: 900;
+}
+.maincard .desc {
+  font-size: 2rem;
+  font-family: "Montserrat-Medium";
+}
+.maincard .feelslike {
+  font-size: 1.6rem;
+}
