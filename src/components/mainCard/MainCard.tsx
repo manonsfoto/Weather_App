@@ -3,8 +3,9 @@ import { IDataWeather } from "../../interface/IDataWeather";
 import "./MainCard.css";
 interface MainCardProps {
   data: IDataWeather;
+  setIsCelsius: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const MainCard: React.FC<MainCardProps> = ({ data }) => {
+const MainCard: React.FC<MainCardProps> = ({ data, setIsCelsius }) => {
   return (
     <section className="maincard flex">
       <div className="textbox-left">
@@ -21,8 +22,12 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
       </div>
       <div>
         <div className="btn-temp-wrapper">
-          <button type="button">℃</button>
-          <button type="button">℉</button>
+          <button onClick={() => setIsCelsius(true)} type="button">
+            ℃
+          </button>
+          <button onClick={() => setIsCelsius(false)} type="button">
+            ℉
+          </button>
         </div>
         <p className="temp-now"> {data.main.temp}℃</p>
         <p className="desc">{data.weather[0].description}</p>

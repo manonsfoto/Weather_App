@@ -10,8 +10,11 @@ import SearchBar from "../../components/searchBar/SearchBar";
 const Home = () => {
   const [cityNameInput, setCityNameInput] = useState<string>("dusseldorf");
   const [searchInput, setSearchInput] = useState<string>("");
+  const [isCelsius, setIsCelsius] = useState<boolean>(true);
 
-  const dataWeather = useFetch<IDataWeather>(getCurrentURL(cityNameInput));
+  const dataWeather = useFetch<IDataWeather>(
+    getCurrentURL(cityNameInput, isCelsius)
+  );
 
   return (
     <>
@@ -21,7 +24,12 @@ const Home = () => {
         searchInput={searchInput}
         setCityNameInput={setCityNameInput}
       />
-      <WeatherDisplay dataWeather={dataWeather} cityNameInput={cityNameInput} />
+      <WeatherDisplay
+        dataWeather={dataWeather}
+        cityNameInput={cityNameInput}
+        isCelsius={isCelsius}
+        setIsCelsius={setIsCelsius}
+      />
     </>
   );
 };

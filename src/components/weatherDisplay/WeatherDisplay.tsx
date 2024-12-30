@@ -9,17 +9,21 @@ interface WeatherDisplayProps {
     loading: boolean;
   };
   cityNameInput: string;
+  isCelsius: boolean;
+  setIsCelsius: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   dataWeather,
   cityNameInput,
+  isCelsius,
+  setIsCelsius,
 }) => {
   if (!dataWeather.data) return;
   return (
     <section className="stn-weather-display flex">
-      <MainCard data={dataWeather.data} />
+      <MainCard data={dataWeather.data} setIsCelsius={setIsCelsius} />
       <Highlight data={dataWeather.data} />
-      <Forecast cityNameInput={cityNameInput} />
+      <Forecast cityNameInput={cityNameInput} isCelsius={isCelsius} />
     </section>
   );
 };

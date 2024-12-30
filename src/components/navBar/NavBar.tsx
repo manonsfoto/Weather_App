@@ -1,3 +1,4 @@
+import DarkMode from "../darkMode/DarkMode";
 import "./NavBar.css";
 interface NavBarProps {
   setCityNameInput: React.Dispatch<React.SetStateAction<string>>;
@@ -20,6 +21,7 @@ const NavBar: React.FC<NavBarProps> = ({ setCityNameInput }) => {
       <button type="button" onClick={() => setCityNameInput("Vancouver")}>
         Vancouver
       </button>
+      <DarkMode />
     </nav>
   );
 };

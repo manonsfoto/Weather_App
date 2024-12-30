@@ -5,9 +5,12 @@ import MiniCard from "../miniCard/MiniCard";
 import "./Forecast.css";
 interface ForecastProps {
   cityNameInput: string;
+  isCelsius: boolean;
 }
-const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
-  const dataForecast = useFetch<IDataForecast>(getForecastURL(cityNameInput));
+const Forecast: React.FC<ForecastProps> = ({ cityNameInput, isCelsius }) => {
+  const dataForecast = useFetch<IDataForecast>(
+    getForecastURL(cityNameInput, isCelsius)
+  );
   console.log(dataForecast);
 
   return (
