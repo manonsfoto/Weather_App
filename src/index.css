@@ -68,6 +68,7 @@ button {
   font-family: "Montserrat-Medium";
   font-size: 2.4rem;
   margin-bottom: 2.4rem;
+  color: rgb(87, 87, 87);
 }
 p {
   font-size: 1.6rem;
@@ -77,10 +78,12 @@ h6 {
 }
 h5 {
   font-size: 2rem;
+  color: rgb(119, 119, 119);
   font-family: "Montserrat-Medium";
 }
 h4 {
   font-size: 2.4rem;
+  color: rgb(119, 119, 119);
   font-family: "Montserrat-Bold";
 }
 h3 {

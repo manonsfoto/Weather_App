@@ -15,7 +15,7 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
       <div className="cards-wrapper flex">
         <article className="mini-box flex">
           <p className="subtitle">Wind Status</p>
-          <p className="emoji">🎐</p>
+          <p className="emoji">🍃</p>
           <p>
             <span className="number-value">
               {isCelsius
