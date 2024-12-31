@@ -13,8 +13,9 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
     <section className="stn-highlight">
       <p className="headline">Today’s Highlight</p>
       <div className="cards-wrapper flex">
-        <article>
+        <article className="mini-box flex">
           <p className="subtitle">Wind Status</p>
+          <p className="emoji">🎐</p>
           <p>
             <span className="number-value">
               {isCelsius
@@ -24,14 +25,15 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
             {isCelsius ? "km/h" : "mph"}
           </p>
         </article>
-        <article>
+        <article className="mini-box flex">
           <p className="subtitle">Humidity</p>
+          <p className="emoji">💧</p>
           <p>
             <span className="number-value">{data.main.humidity}</span> %
           </p>
         </article>
         <article className="flex sun-box">
-          <p>🌅</p>
+          <p className="emoji">🌄</p>
           <div>
             {" "}
             <p className="subtitle">Sunrise</p>
@@ -39,7 +41,7 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
           </div>
         </article>
         <article className="flex sun-box">
-          <p>🌇</p>
+          <p className="emoji">🌇</p>
           <div>
             {" "}
             <p className="subtitle">Sunset</p>

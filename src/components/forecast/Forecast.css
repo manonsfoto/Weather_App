@@ -7,8 +7,13 @@
   justify-content: space-between;
   align-items: self-start;
 }
-.minicard-wrapper {
+.inner-carousel {
   flex-direction: row;
-  flex-wrap: wrap;
+
   gap: 1.8rem;
+}
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+  align-items: flex-start;
 }

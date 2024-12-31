@@ -3,6 +3,7 @@ import { IDataWeather } from "../../interface/IDataWeather";
 import "./MainCard.css";
 import { useContext } from "react";
 import { IsCelsiusContext } from "../../context/Context";
+import LocationIcon from "../../assets/SVG/LocationIcon";
 interface MainCardProps {
   data: IDataWeather;
 }
@@ -11,9 +12,9 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
   return (
     <section className="maincard flex">
       <div className="textbox-left">
-        <h6 className="location">
-          {data.name}, {data.sys.country}
-        </h6>
+        <p className="location">
+          <LocationIcon /> {data.name}, {data.sys.country}
+        </p>
         <h3>{format(Date.now(), "EEEE")}</h3>
         <p className="date-now">{format(Date.now(), "PP")}</p>
         <img
@@ -22,12 +23,20 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
           alt={data.weather[0].description}
         />
       </div>
-      <div>
+      <div className="textbox-right flex">
         <div className="btn-temp-wrapper">
-          <button onClick={() => setIsCelsius(true)} type="button">
+          <button
+            className={`${isCelsius ? "temp-active" : "temp-btn"}`}
+            onClick={() => setIsCelsius(true)}
+            type="button"
+          >
             ℃
           </button>
-          <button onClick={() => setIsCelsius(false)} type="button">
+          <button
+            className={`${isCelsius ? "temp-btn" : "temp-active"} `}
+            onClick={() => setIsCelsius(false)}
+            type="button"
+          >
             ℉
           </button>
         </div>

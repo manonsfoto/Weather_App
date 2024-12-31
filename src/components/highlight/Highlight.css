@@ -1,5 +1,5 @@
 .stn-highlight {
-  width: 55.6rem;
+  width: 40rem;
 
   padding: 2.4rem;
   flex-direction: row;
@@ -29,11 +29,12 @@
 .stn-highlight .cards-wrapper {
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-start;
+
   gap: 1.8rem;
 }
 .stn-highlight .subtitle {
   font-family: "Montserrat-Medium";
+  margin-bottom: 1rem;
 }
 .number-value {
   font-family: "Montserrat-Bold";
@@ -41,5 +42,12 @@
 }
 .sun-box {
   flex-direction: row;
+  justify-content: space-between;
   width: 26.7rem;
+}
+.emoji {
+  font-size: 5rem;
+}
+.mini-box {
+  width: 15rem;
 }

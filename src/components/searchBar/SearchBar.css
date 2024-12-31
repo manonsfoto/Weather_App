@@ -25,5 +25,7 @@
   border: none;
 }
 .searchbar {
-  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-direction: row;
 }

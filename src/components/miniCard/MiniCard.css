@@ -1,5 +1,5 @@
 .minicard {
-  width: 10.4rem;
+  width: 12rem;
 
   border-radius: 2.4rem;
   padding: 2.2rem 1.7rem;
@@ -10,4 +10,7 @@
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border: 1px solid rgba(255, 255, 255, 0.36);
+}
+.minicard img {
+  pointer-events: none;
 }

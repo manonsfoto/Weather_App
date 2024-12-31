@@ -5,6 +5,8 @@ import { getForecastURL } from "../../utils/api/Api";
 import MiniCard from "../miniCard/MiniCard";
 import "./Forecast.css";
 import { IsCelsiusContext } from "../../context/Context";
+import { motion } from "framer-motion";
+
 interface ForecastProps {
   cityNameInput: string;
 }
@@ -13,16 +15,24 @@ const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
   const dataForecast = useFetch<IDataForecast>(
     getForecastURL(cityNameInput, isCelsius)
   );
-  console.log(dataForecast);
 
   return (
     <section className="stn-forecast">
       <p className="headline">5 Days Forecast</p>
-      <div className="minicard-wrapper flex">
-        {dataForecast.data?.list.map((singleData) => (
-          <MiniCard key={singleData.dt} singleData={singleData} />
-        ))}
-      </div>
+      <motion.div className=" carousel flex">
+        <motion.div
+          drag="x"
+          dragConstraints={{ right: 0, left: -5000 }}
+          className="inner-carousel flex"
+        >
+          {dataForecast.data?.list.map((singleData) => (
+            <motion.div className="item">
+              {" "}
+              <MiniCard key={singleData.dt} singleData={singleData} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
