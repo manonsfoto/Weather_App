@@ -2,5 +2,12 @@
   flex-direction: row;
   margin-top: 2rem;
   gap: 3rem;
+  justify-content: flex-end;
   flex-wrap: wrap;
+}
+.weather-card-wrapper {
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  gap: 3rem;
 }

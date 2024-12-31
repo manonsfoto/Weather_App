@@ -1,14 +1,14 @@
 .searchbar input {
-  width: 25rem;
+  width: 22rem;
   font-family: "Montserrat-Regular";
   font-size: 1.6rem;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem;
   background: none;
   border: 1px solid white;
   border-radius: 15px;
   outline: none;
 
-  color: #fff;
+  color: #494949;
 }
 
 .input-wrapper {
@@ -21,11 +21,15 @@
   padding-right: 10px;
   padding-left: 10px;
   background: none;
-  left: 21rem;
+  left: 18rem;
   border: none;
 }
+.btn-search svg {
+  fill: #333333cc;
+}
+.btn-search svg:hover {
+  fill: rgb(22, 22, 22);
+}
 .searchbar {
-  justify-content: flex-end;
   gap: 2rem;
-  flex-direction: row;
 }

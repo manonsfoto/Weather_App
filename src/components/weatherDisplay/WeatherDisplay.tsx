@@ -19,8 +19,11 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
 
   return (
     <section className="stn-weather-display flex">
-      <MainCard data={dataWeather.data} />
-      <Highlight data={dataWeather.data} />
+      <div className="weather-card-wrapper flex">
+        {" "}
+        <MainCard data={dataWeather.data} />
+        <Highlight data={dataWeather.data} />
+      </div>
       <Forecast cityNameInput={cityNameInput} />
     </section>
   );

@@ -26,9 +26,9 @@ const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
           className="inner-carousel flex"
         >
           {dataForecast.data?.list.map((singleData) => (
-            <motion.div className="item">
+            <motion.div className="item" key={singleData.dt}>
               {" "}
-              <MiniCard key={singleData.dt} singleData={singleData} />
+              <MiniCard singleData={singleData} />
             </motion.div>
           ))}
         </motion.div>

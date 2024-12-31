@@ -43,7 +43,7 @@
 .sun-box {
   flex-direction: row;
   justify-content: space-between;
-  width: 26.7rem;
+  width: 32rem;
 }
 .emoji {
   font-size: 5rem;

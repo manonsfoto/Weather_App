@@ -18,15 +18,17 @@ const Home = () => {
   );
 
   return (
-    <>
-      <NavBar setCityNameInput={setCityNameInput} />
-      <SearchBar
-        setSearchInput={setSearchInput}
-        searchInput={searchInput}
-        setCityNameInput={setCityNameInput}
-      />
+    <div className="home flex">
+      <aside className="side-bar flex">
+        <NavBar setCityNameInput={setCityNameInput} />
+        <SearchBar
+          setSearchInput={setSearchInput}
+          searchInput={searchInput}
+          setCityNameInput={setCityNameInput}
+        />
+      </aside>
       <WeatherDisplay dataWeather={dataWeather} cityNameInput={cityNameInput} />
-    </>
+    </div>
   );
 };
 

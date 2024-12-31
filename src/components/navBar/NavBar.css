@@ -1,11 +1,11 @@
 nav button {
-  width: 15rem;
+  width: 22rem;
   font-family: "Montserrat-Regular";
   font-size: 1.6rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 3.6rem;
+  border-radius: 10px;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.829);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
   color: #333333cc;
@@ -16,8 +16,7 @@ nav button:hover {
   background-color: rgba(255, 255, 255, 0.562);
 }
 .nav {
-  flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }

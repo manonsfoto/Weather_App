@@ -38,10 +38,10 @@ body {
 }
 body .dark {
   background-image: url(/public/img/night-bg.jpg);
-  background-size: contain;
+  background-size: cover;
 }
 body main {
-  max-width: 1440px;
+  max-width: 1180px;
   margin: 5rem auto;
   padding: 3rem;
   background: rgba(255, 255, 255, 0.23);

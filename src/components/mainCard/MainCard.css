@@ -1,6 +1,7 @@
 .maincard {
-  width: 40rem;
+  width: 36rem;
   padding: 2rem;
+  height: 50rem;
   flex-direction: row;
   justify-content: space-between;
   align-items: self-start;
@@ -12,14 +13,15 @@
   border: 1px solid rgba(255, 255, 255, 0.36);
 }
 .maincard .location {
-  background-color: #9c9c9c94;
-  font-family: "Montserrat-Light";
+  background-color: #9eff4494;
+  font-family: "Montserrat-Bold";
   letter-spacing: 0.5px;
   border-radius: 2rem;
-  color: #fff;
+  color: #5d5d5d;
   padding: 0.5rem 1.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
+
 .temp-btn {
   font-family: "Inter";
   background: none;
@@ -45,7 +47,7 @@
   text-decoration: underline;
 }
 .btn-temp-wrapper {
-  margin-bottom: 10rem;
+  margin-bottom: 26rem;
 }
 
 .maincard .temp-now {
