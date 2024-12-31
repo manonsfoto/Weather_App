@@ -18,7 +18,7 @@ const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
 
   return (
     <section className="stn-forecast">
-      <p className="headline">5 Days Forecast</p>
+      <p className="headline">5-Day Forecast</p>
       <motion.div className=" carousel flex">
         <motion.div
           drag="x"

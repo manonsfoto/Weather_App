@@ -15,9 +15,7 @@
   pointer-events: none;
 }
 .dark-mode .minicard {
-  background: rgba(255, 255, 255, 0.068);
+  background: rgba(87, 87, 87, 0.507);
 
-  box-shadow: 0 4px 30px rgba(233, 231, 231, 0.041);
-
-  border: 1px solid rgba(255, 255, 255, 0.123);
+  box-shadow: 0 4px 30px rgba(233, 231, 231, 0.055);
 }

@@ -90,3 +90,6 @@
 .dark-mode .maincard .location svg {
   fill: #e9e8e8;
 }
+.dark-mode .maincard .temp-now {
+  color: rgb(255, 255, 255);
+}
