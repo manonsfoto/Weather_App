@@ -104,7 +104,7 @@ h2 {
 }
 
 .dark-mode main {
-  box-shadow: 0 4px 30px rgba(185, 185, 185, 0.582);
+  box-shadow: 0 4px 30px hsla(0, 0%, 73%, 0.582);
 
   border: 2px solid rgba(255, 255, 255, 0.952);
 }

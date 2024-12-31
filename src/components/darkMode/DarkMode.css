@@ -1,4 +1,35 @@
-.d-l-mode {
-  font-size: 2rem;
+.switch {
+  width: 8rem;
+  height: 5rem;
+  border-radius: 4rem;
+  padding: 5px;
+  display: flex;
   cursor: pointer;
+}
+
+.switch.on {
+  background-color: #440a86b0;
+  justify-content: flex-end;
+}
+
+.switch.off {
+  background-color: #58585870;
+  justify-content: flex-start;
+}
+
+.switch div {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 200px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.02);
+}
+.switch.off .icon svg {
+  width: 40px;
+  height: 40px;
+}
+.switch.on .icon svg {
+  width: 40px;
+  height: 40px;
+  fill: rgb(156, 88, 233);
 }

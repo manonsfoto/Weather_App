@@ -1,6 +1,9 @@
 import { useContext, useEffect } from "react";
 import "./DarkMode.css";
 import { DarkModeContext } from "../../context/Context";
+import { motion } from "framer-motion";
+import Moon from "../../assets/SVG/Moon";
+import Sun from "../../assets/SVG/Sun";
 
 const DarkMode = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
@@ -12,10 +15,17 @@ const DarkMode = () => {
       body.classList.remove("dark-mode");
     }
   }, [darkMode]);
+  const className = `switch ${darkMode ? "on" : "off"}`;
   return (
-    <div className="d-l-mode" onClick={() => setDarkMode(!darkMode)}>
-      {darkMode ? "Sun" : "Moon"}
-    </div>
+    <motion.div
+      animate
+      className={className}
+      onClick={() => setDarkMode(!darkMode)}
+    >
+      <motion.div animate>
+        <div className="icon">{darkMode ? <Moon /> : <Sun />}</div>
+      </motion.div>
+    </motion.div>
   );
 };
 

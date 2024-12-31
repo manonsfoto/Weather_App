@@ -31,7 +31,7 @@
   fill: rgb(22, 22, 22);
 }
 .searchbar {
-  gap: 2rem;
+  gap: 7rem;
 }
 .dark-mode .searchbar input {
   background-color: rgba(235, 235, 235, 0.788);
