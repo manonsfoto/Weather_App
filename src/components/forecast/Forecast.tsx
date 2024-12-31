@@ -22,7 +22,7 @@ const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
       <motion.div className=" carousel flex">
         <motion.div
           drag="x"
-          dragConstraints={{ right: 0, left: -5000 }}
+          dragConstraints={{ right: 0, left: -4800 }}
           className="inner-carousel flex"
         >
           {dataForecast.data?.list.map((singleData) => (

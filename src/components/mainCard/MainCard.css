@@ -2,9 +2,7 @@
   width: 36rem;
   padding: 2rem;
   height: 50rem;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: self-start;
+
   background: rgba(255, 255, 255, 0.49);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -19,7 +17,6 @@
   border-radius: 2rem;
   color: #5d5d5d;
   padding: 0.5rem 1.6rem;
-  margin-bottom: 5rem;
 }
 
 .temp-btn {
@@ -47,20 +44,32 @@
   text-decoration: underline;
 }
 .btn-temp-wrapper {
-  margin-bottom: 26rem;
 }
 
 .maincard .temp-now {
   font-family: "Inter";
   font-size: 4.2rem;
   font-weight: 900;
-  margin-bottom: 2rem;
+
   color: rgba(0, 0, 0, 0.726);
 }
 
 .img-weather {
   width: 15rem;
 }
-.textbox-right {
-  align-items: flex-end;
+
+.textbox-top {
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 7rem;
+  justify-content: space-between;
+}
+.textbox-bottom {
+  width: 70%;
+}
+.left {
+  align-self: flex-start;
+}
+.right {
+  align-self: flex-end;
 }

@@ -1,6 +1,6 @@
 .stn-weather-display {
   flex-direction: row;
-  margin-top: 2rem;
+
   gap: 3rem;
   justify-content: flex-end;
   flex-wrap: wrap;

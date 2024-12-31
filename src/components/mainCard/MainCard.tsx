@@ -11,19 +11,11 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
   const { isCelsius, setIsCelsius } = useContext(IsCelsiusContext);
   return (
     <section className="maincard flex">
-      <div className="textbox-left">
+      <div className="textbox-top flex">
+        {" "}
         <p className="location">
           <LocationIcon /> {data.name}, {data.sys.country}
         </p>
-        <h3>{format(Date.now(), "EEEE")}</h3>
-        <p className="date-now">{format(Date.now(), "PP")}</p>
-        <img
-          className="img-weather"
-          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-          alt={data.weather[0].description}
-        />
-      </div>
-      <div className="textbox-right flex">
         <div className="btn-temp-wrapper">
           <button
             className={`${isCelsius ? "temp-active" : "temp-btn"}`}
@@ -40,13 +32,23 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
             ℉
           </button>
         </div>
-        <p className="temp-now">
+      </div>
+
+      <div className="textbox-bottom flex">
+        <h3 className="left">{format(Date.now(), "EEEE")}</h3>
+        <p className="date-now left">{format(Date.now(), "PP")}</p>
+        <img
+          className="img-weather right"
+          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+          alt={data.weather[0].description}
+        />{" "}
+        <p className="temp-now right">
           {" "}
           {data.main.temp}
           {isCelsius ? "℃" : "℉"}
         </p>
-        <h5>{data.weather[0].description}</h5>
-        <p className="feelslike">Feels like {data.main.feels_like}º</p>
+        <h5 className="right">{data.weather[0].description}</h5>
+        <p className="right">Feels like {data.main.feels_like}º</p>
       </div>
     </section>
   );
