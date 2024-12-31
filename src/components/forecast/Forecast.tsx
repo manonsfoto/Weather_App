@@ -19,7 +19,7 @@ const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
   return (
     <section className="stn-forecast">
       <p className="headline">5-Day Forecast</p>
-      <motion.div className=" carousel flex">
+      <motion.div className=" carousel flex" whileTap={{ cursor: "grabbing" }}>
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -4800 }}
