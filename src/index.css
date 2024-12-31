@@ -28,17 +28,21 @@ html {
   font-size: 62.5%;
   font-family: "Montserrat-Regular", "Inter", Helvetica, sans-serif;
 }
+:root {
+  --bg-image: url(/public/img/day-bg.jpg);
+}
+
 body {
   margin: 0 auto;
   padding-right: 3rem;
   padding-left: 3rem;
-  background-image: url(/public/img/day-bg.jpg);
+  background-image: var(--bg-image);
   background-position: left top;
   background-size: cover;
+  transition: background-image 0.3s ease;
 }
-body .dark {
-  background-image: url(/public/img/night-bg.jpg);
-  background-size: cover;
+body.dark-mode {
+  --bg-image: url(/public/img/night-bg.jpg);
 }
 body main {
   max-width: 1180px;
