@@ -1,18 +1,20 @@
 import { format } from "date-fns";
 import { IDataWeather } from "../../interface/IDataWeather";
 import "./MainCard.css";
+import { useContext } from "react";
+import { IsCelsiusContext } from "../../context/Context";
 interface MainCardProps {
   data: IDataWeather;
-  setIsCelsius: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const MainCard: React.FC<MainCardProps> = ({ data, setIsCelsius }) => {
+const MainCard: React.FC<MainCardProps> = ({ data }) => {
+  const { isCelsius, setIsCelsius } = useContext(IsCelsiusContext);
   return (
     <section className="maincard flex">
       <div className="textbox-left">
-        <p className="location">
+        <h6 className="location">
           {data.name}, {data.sys.country}
-        </p>
-        <p className="weekday">{format(Date.now(), "EEEE")}</p>
+        </h6>
+        <h3>{format(Date.now(), "EEEE")}</h3>
         <p className="date-now">{format(Date.now(), "PP")}</p>
         <img
           className="img-weather"
@@ -29,8 +31,12 @@ const MainCard: React.FC<MainCardProps> = ({ data, setIsCelsius }) => {
             ℉
           </button>
         </div>
-        <p className="temp-now"> {data.main.temp}℃</p>
-        <p className="desc">{data.weather[0].description}</p>
+        <p className="temp-now">
+          {" "}
+          {data.main.temp}
+          {isCelsius ? "℃" : "℉"}
+        </p>
+        <h5>{data.weather[0].description}</h5>
         <p className="feelslike">Feels like {data.main.feels_like}º</p>
       </div>
     </section>

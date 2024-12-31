@@ -1,13 +1,15 @@
+import { useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import { IDataForecast } from "../../interface/IDataForecast";
 import { getForecastURL } from "../../utils/api/Api";
 import MiniCard from "../miniCard/MiniCard";
 import "./Forecast.css";
+import { IsCelsiusContext } from "../../context/Context";
 interface ForecastProps {
   cityNameInput: string;
-  isCelsius: boolean;
 }
-const Forecast: React.FC<ForecastProps> = ({ cityNameInput, isCelsius }) => {
+const Forecast: React.FC<ForecastProps> = ({ cityNameInput }) => {
+  const { isCelsius } = useContext(IsCelsiusContext);
   const dataForecast = useFetch<IDataForecast>(
     getForecastURL(cityNameInput, isCelsius)
   );

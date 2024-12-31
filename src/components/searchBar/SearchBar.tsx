@@ -11,7 +11,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   setCityNameInput,
 }) => {
   return (
-    <section className="searchbar">
+    <section className="searchbar flex">
       <div className="input-wrapper">
         <input
           type="text"

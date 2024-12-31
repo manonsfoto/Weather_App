@@ -1,17 +1,28 @@
 .stn-highlight {
-  border: 1px solid brown;
   width: 55.6rem;
-  border-radius: 2.4rem;
+
   padding: 2.4rem;
   flex-direction: row;
   justify-content: space-between;
   align-items: self-start;
+
+  background: rgba(255, 255, 255, 0.49);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
 }
 .stn-highlight .cards-wrapper article {
   padding: 1.6rem 2.2rem;
   border-radius: 1.6rem;
 
-  border: 1px solid green;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.93);
 
   text-align: right;
 }
@@ -23,7 +34,6 @@
 }
 .stn-highlight .subtitle {
   font-family: "Montserrat-Medium";
-  font-size: 1.6rem;
 }
 .number-value {
   font-family: "Montserrat-Bold";

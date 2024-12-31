@@ -1,11 +1,14 @@
 import { IDataWeather } from "../../interface/IDataWeather";
 import "./Highlight.css";
 import convertTime from "../../utils/function/convertTime";
+import { useContext } from "react";
+import { IsCelsiusContext } from "../../context/Context";
 
 interface MainCardProps {
   data: IDataWeather;
 }
 const Highlight: React.FC<MainCardProps> = ({ data }) => {
+  const { isCelsius } = useContext(IsCelsiusContext);
   return (
     <section className="stn-highlight">
       <p className="headline">Today’s Highlight</p>
@@ -14,9 +17,11 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
           <p className="subtitle">Wind Status</p>
           <p>
             <span className="number-value">
-              {Math.round(Number(data.wind.speed) * 3.6)}
+              {isCelsius
+                ? Math.round(Number(data.wind.speed) * 3.6)
+                : Math.round(Number(data.wind.speed))}
             </span>{" "}
-            km/h
+            {isCelsius ? "km/h" : "mph"}
           </p>
         </article>
         <article>
@@ -30,9 +35,7 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
           <div>
             {" "}
             <p className="subtitle">Sunrise</p>
-            <p className="number-value">
-              {convertTime(data.sys.sunrise, data.timezone)}
-            </p>
+            <h4>{convertTime(data.sys.sunrise, data.timezone)}</h4>
           </div>
         </article>
         <article className="flex sun-box">
@@ -40,9 +43,7 @@ const Highlight: React.FC<MainCardProps> = ({ data }) => {
           <div>
             {" "}
             <p className="subtitle">Sunset</p>
-            <p className="number-value">
-              {convertTime(data.sys.sunset, data.timezone)}
-            </p>
+            <h4>{convertTime(data.sys.sunset, data.timezone)}</h4>
           </div>
         </article>
       </div>

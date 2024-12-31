@@ -5,7 +5,7 @@ interface NavBarProps {
 }
 const NavBar: React.FC<NavBarProps> = ({ setCityNameInput }) => {
   return (
-    <nav>
+    <nav className="flex nav">
       <button type="button" onClick={() => setCityNameInput("Dusseldorf")}>
         Düsseldorf
       </button>

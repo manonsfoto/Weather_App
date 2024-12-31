@@ -1,27 +1,26 @@
 .maincard {
-  border: 1px solid brown;
   width: 55.6rem;
-  border-radius: 2.4rem;
   padding: 2.4rem;
   flex-direction: row;
   justify-content: space-between;
   align-items: self-start;
+
+  background: rgba(255, 255, 255, 0.49);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
 }
 .maincard .location {
   background-color: #363636;
   width: 22.8rem;
-  font-size: 1.8rem;
+
   border-radius: 1.6rem;
   color: #fff;
   padding: 0.9rem 1.6rem;
 }
-.maincard .weekday {
-  font-family: "Montserrat-Bold";
-  font-size: 3.6rem;
-}
-.maincard .date-now {
-  font-size: 1.6rem;
-}
+
 .btn-temp-wrapper button {
   font-family: "Inter";
   background-color: #fff;
@@ -44,13 +43,7 @@
   font-weight: 900;
   margin-bottom: 4.5rem;
 }
-.maincard .desc {
-  font-size: 2rem;
-  font-family: "Montserrat-Medium";
-}
-.maincard .feelslike {
-  font-size: 1.6rem;
-}
+
 .img-weather {
   width: 20rem;
   position: relative;

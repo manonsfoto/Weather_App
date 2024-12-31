@@ -26,21 +26,35 @@
 }
 html {
   font-size: 62.5%;
-  font-family: "Montserrat-Regular", Helvetica, sans-serif;
+  font-family: "Montserrat-Regular", "Inter", Helvetica, sans-serif;
 }
 body {
-  max-width: 1440px;
   margin: 0 auto;
-  border: 1px solid tomato;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  background-image: url(/public/img/day-bg.jpg);
+  background-position: left top;
+  background-size: cover;
 }
-
+body .dark {
+  background-image: url(/public/img/night-bg.jpg);
+  background-size: contain;
+}
+body main {
+  max-width: 1440px;
+  margin: 5rem auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 3px solid rgba(255, 255, 255, 0.36);
+}
 img {
   max-height: 100%;
 }
-/* a {
-  color: black;
-  text-decoration: none;
-} */
+
 .flex {
   display: flex;
   justify-content: center;
@@ -54,4 +68,25 @@ button {
   font-family: "Montserrat-Medium";
   font-size: 2.4rem;
   margin-bottom: 2.4rem;
+}
+p {
+  font-size: 1.6rem;
+}
+h6 {
+  font-size: 1.8rem;
+}
+h5 {
+  font-size: 2rem;
+  font-family: "Montserrat-Medium";
+}
+h4 {
+  font-size: 2.4rem;
+  font-family: "Montserrat-Bold";
+}
+h3 {
+  font-size: 3.6rem;
+  font-family: "Montserrat-Bold";
+}
+h2 {
+  font-size: 4rem;
 }

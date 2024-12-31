@@ -1,5 +1,6 @@
 .stn-weather-display {
-  border: 1px solid green;
   flex-direction: row;
+  margin-top: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;
 }

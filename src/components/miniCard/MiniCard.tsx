@@ -1,10 +1,13 @@
 import { format } from "date-fns";
 import { IList } from "../../interface/IDataForecast";
 import "./MiniCard.css";
+import { useContext } from "react";
+import { IsCelsiusContext } from "../../context/Context";
 interface MiniCardProps {
   singleData: IList;
 }
 const MiniCard: React.FC<MiniCardProps> = ({ singleData }) => {
+  const { isCelsius } = useContext(IsCelsiusContext);
   return (
     <article className="minicard flex">
       <p>
@@ -13,11 +16,14 @@ const MiniCard: React.FC<MiniCardProps> = ({ singleData }) => {
           ? "Today"
           : format(new Date(singleData.dt_txt), "EEE")}
       </p>
+      <p>{format(new Date(singleData.dt_txt), "h:mm a")}</p>
       <img
         src={`https://openweathermap.org/img/wn/${singleData.weather[0].icon}@2x.png`}
         alt={singleData.weather[0].description}
       />
-      <p>{singleData.main.temp} ℃</p>
+      <p>
+        {singleData.main.temp} {isCelsius ? "℃" : "℉"}
+      </p>
     </article>
   );
 };
