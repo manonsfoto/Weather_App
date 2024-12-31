@@ -20,3 +20,13 @@ nav button:hover {
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
+
+.dark-mode nav button {
+  background-color: rgba(53, 53, 53, 0.904);
+  border: 1px solid rgba(255, 255, 255, 0.274);
+
+  color: #f5f3f3cc;
+}
+.dark-mode nav button:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+}

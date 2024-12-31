@@ -10,9 +10,10 @@
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
+
   border: 1px solid rgba(255, 255, 255, 0.36);
 }
+
 .stn-highlight .cards-wrapper article {
   padding: 1.6rem 2.2rem;
   border-radius: 1.6rem;
@@ -21,9 +22,8 @@
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  border: 1px solid rgba(255, 255, 255, 0.93);
 
+  border: 1px solid rgba(255, 255, 255, 0.93);
   text-align: right;
 }
 .stn-highlight .cards-wrapper {
@@ -50,4 +50,12 @@
 }
 .mini-box {
   width: 15rem;
+}
+
+.dark-mode .stn-highlight {
+  background: rgba(255, 255, 255, 0.082);
+}
+.dark-mode .stn-highlight .cards-wrapper article {
+  background: rgba(48, 48, 48, 0.384);
+  border: 1px solid rgba(255, 255, 255, 0.411);
 }

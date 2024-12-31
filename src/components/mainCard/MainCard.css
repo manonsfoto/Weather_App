@@ -7,7 +7,7 @@
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
+
   border: 1px solid rgba(255, 255, 255, 0.36);
 }
 .maincard .location {
@@ -17,6 +17,9 @@
   border-radius: 2rem;
   color: #5d5d5d;
   padding: 0.5rem 1.6rem;
+}
+.maincard .location svg {
+  fill: #5d5d5d;
 }
 
 .temp-btn {
@@ -42,8 +45,6 @@
 
 .btn-temp-wrapper button:hover {
   text-decoration: underline;
-}
-.btn-temp-wrapper {
 }
 
 .maincard .temp-now {
@@ -72,4 +73,20 @@
 }
 .right {
   align-self: flex-end;
+}
+.dark-mode .maincard {
+  background: rgba(255, 255, 255, 0.082);
+}
+
+.dark-mode .maincard .location {
+  background-color: #ae23ffdc;
+
+  color: #e9e8e8;
+}
+
+.dark-mode .temp-active {
+  color: rgb(255, 255, 255);
+}
+.dark-mode .maincard .location svg {
+  fill: #e9e8e8;
 }

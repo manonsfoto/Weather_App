@@ -8,9 +8,16 @@
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.8px);
-  -webkit-backdrop-filter: blur(3.8px);
+
   border: 1px solid rgba(255, 255, 255, 0.19);
 }
 .home {
   flex-direction: row;
+}
+.dark-mode .side-bar {
+  background: rgba(255, 255, 255, 0.089);
+
+  box-shadow: 0 4px 30px rgba(185, 175, 175, 0.295);
+
+  border: 1px solid rgba(255, 255, 255, 0.733);
 }
