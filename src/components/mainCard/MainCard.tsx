@@ -44,10 +44,10 @@ const MainCard: React.FC<MainCardProps> = ({ data }) => {
         />{" "}
         <p className="temp-now right">
           {" "}
-          {data.main.temp} {isCelsius ? "℃" : "℉"}
+          {Math.round(data.main.temp)} {isCelsius ? "℃" : "℉"}
         </p>
         <h5 className="right">{data.weather[0].description}</h5>
-        <p className="right">Feels like {data.main.feels_like} º</p>
+        <p className="right">Feels like {Math.round(data.main.feels_like)} º</p>
       </div>
     </section>
   );

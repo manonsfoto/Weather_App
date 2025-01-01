@@ -22,7 +22,7 @@ const MiniCard: React.FC<MiniCardProps> = ({ singleData }) => {
         alt={singleData.weather[0].description}
       />
       <p>
-        {singleData.main.temp} {isCelsius ? "℃" : "℉"}
+        {Math.round(singleData.main.temp)} {isCelsius ? "℃" : "℉"}
       </p>
     </article>
   );
