@@ -20,10 +20,61 @@
 .home {
   display: grid;
 
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: fit auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
   grid-template-areas:
     "sidebar maincard highlight"
     "sidebar forecast forecast";
   gap: 3rem;
+}
+
+@media (max-width: 1278px) {
+  .home {
+    grid-template-columns: repeat(2, 40rem);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "sidebar sidebar"
+      "maincard highlight"
+      "forecast forecast";
+  }
+  .stn-forecast {
+    justify-self: center;
+  }
+
+  main {
+    width: fit-content;
+  }
+
+  nav button {
+    width: fit-content;
+  }
+  .nav {
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+  .searchbar {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+}
+@media (max-width: 965px) {
+  .home {
+    grid-template-columns: repeat(1, 50rem);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "sidebar "
+      "maincard "
+      " highlight"
+      "forecast ";
+  }
+
+  .home .stn-forecast {
+    width: 50rem;
+  }
+  .home .stn-highlight .wind,
+  .home .stn-highlight .humidity {
+    width: 21rem;
+    justify-self: center;
+  }
 }
