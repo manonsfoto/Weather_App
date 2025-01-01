@@ -1,19 +1,24 @@
 .stn-highlight {
-  width: 40rem;
-
   padding: 2.4rem;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: self-start;
-
   background: rgba(255, 255, 255, 0.49);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
-
   border: 1px solid rgba(255, 255, 255, 0.36);
-}
 
+  grid-area: highlight;
+}
+.stn-highlight .cards-wrapper {
+  display: grid;
+
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "wind humidity"
+    "sunset sunset"
+    "sunrise sunrise";
+  gap: 1.8rem;
+}
 .stn-highlight .cards-wrapper article {
   padding: 1.6rem 2.2rem;
   border-radius: 1.6rem;
@@ -26,12 +31,7 @@
   border: 1px solid rgba(255, 255, 255, 0.93);
   text-align: right;
 }
-.stn-highlight .cards-wrapper {
-  flex-wrap: wrap;
-  flex-direction: row;
 
-  gap: 1.8rem;
-}
 .stn-highlight .subtitle {
   font-family: "Montserrat-Medium";
   margin-bottom: 1rem;
@@ -43,13 +43,9 @@
 .sun-box {
   flex-direction: row;
   justify-content: space-between;
-  width: 32rem;
 }
 .emoji {
   font-size: 5rem;
-}
-.mini-box {
-  width: 15rem;
 }
 
 .dark-mode .stn-highlight {
@@ -58,4 +54,19 @@
 .dark-mode .stn-highlight .cards-wrapper article {
   background: rgba(48, 48, 48, 0.384);
   border: 1px solid rgba(255, 255, 255, 0.411);
+}
+
+.wind {
+  grid-area: wind;
+  width: 16rem;
+}
+.humidity {
+  grid-area: humidity;
+  width: 16rem;
+}
+.sunrise {
+  grid-area: sunrise;
+}
+.sunset {
+  grid-area: sunset;
 }

@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
 import NavBar from "../../components/navBar/NavBar";
-import WeatherDisplay from "../../components/weatherDisplay/WeatherDisplay";
+
 import { IDataWeather } from "../../interface/IDataWeather";
 import "./Home.css";
 import useFetch from "../../hooks/useFetch";
 import { getCurrentURL } from "../../utils/api/Api";
 import SearchBar from "../../components/searchBar/SearchBar";
 import { IsCelsiusContext } from "../../context/Context";
+import MainCard from "../../components/mainCard/MainCard";
+import Forecast from "../../components/forecast/Forecast";
+import Highlight from "../../components/highlight/Highlight";
 
 const Home = () => {
   const [cityNameInput, setCityNameInput] = useState<string>("dusseldorf");
@@ -16,10 +19,10 @@ const Home = () => {
   const dataWeather = useFetch<IDataWeather>(
     getCurrentURL(cityNameInput, isCelsius)
   );
-
+  if (!dataWeather.data) return;
   return (
-    <div className="home flex">
-      <aside className="side-bar flex">
+    <div className="home">
+      <aside className="sidebar flex">
         <NavBar setCityNameInput={setCityNameInput} />
         <SearchBar
           setSearchInput={setSearchInput}
@@ -27,7 +30,10 @@ const Home = () => {
           setCityNameInput={setCityNameInput}
         />
       </aside>
-      <WeatherDisplay dataWeather={dataWeather} cityNameInput={cityNameInput} />
+
+      <MainCard data={dataWeather.data} />
+      <Highlight data={dataWeather.data} />
+      <Forecast cityNameInput={cityNameInput} />
     </div>
   );
 };

@@ -1,14 +1,12 @@
 .maincard {
-  width: 36rem;
   padding: 2rem;
-  height: 50rem;
-
   background: rgba(255, 255, 255, 0.49);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
-
   border: 1px solid rgba(255, 255, 255, 0.36);
+
+  grid-area: maincard;
 }
 .maincard .location {
   background-color: #9eff4494;
@@ -54,6 +52,9 @@
 
   color: rgba(0, 0, 0, 0.726);
 }
+.maincard .date-now {
+  margin-top: 10px;
+}
 
 .img-weather {
   width: 15rem;
@@ -66,13 +67,14 @@
   justify-content: space-between;
 }
 .textbox-bottom {
-  width: 70%;
+  width: 80%;
 }
 .left {
   align-self: flex-start;
 }
 .right {
   align-self: flex-end;
+  margin-bottom: 5px;
 }
 .dark-mode .maincard {
   background: rgba(255, 255, 255, 0.082);

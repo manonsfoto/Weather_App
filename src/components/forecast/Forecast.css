@@ -6,6 +6,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: self-start;
+
+  grid-area: forecast;
 }
 .inner-carousel {
   flex-direction: row;

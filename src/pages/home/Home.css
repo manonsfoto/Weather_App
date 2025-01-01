@@ -1,23 +1,29 @@
-.side-bar {
-  height: 84rem;
+.sidebar {
   gap: 2rem;
   padding: 2rem;
   justify-content: space-evenly;
-
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.8px);
-
   border: 1px solid rgba(255, 255, 255, 0.19);
+
+  grid-area: sidebar;
 }
-.home {
-  flex-direction: row;
-}
-.dark-mode .side-bar {
+
+.dark-mode .sidebar {
   background: rgba(255, 255, 255, 0.089);
-
   box-shadow: 0 4px 30px rgba(185, 175, 175, 0.295);
-
   border: 1px solid rgba(255, 255, 255, 0.733);
+}
+
+.home {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: fit auto;
+  grid-template-areas:
+    "sidebar maincard highlight"
+    "sidebar forecast forecast";
+  gap: 3rem;
 }
