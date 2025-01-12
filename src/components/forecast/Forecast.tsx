@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import useFetch from "../../hooks/useFetch";
-import { IDataForecast } from "../../interface/IDataForecast";
+import { IDataForecast } from "../../interfaces/IDataForecast";
 import { getForecastURL } from "../../utils/api/Api";
 import MiniCard from "../miniCard/MiniCard";
 import "./Forecast.css";

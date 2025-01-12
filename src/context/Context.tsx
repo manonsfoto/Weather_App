@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
-interface IDarkModeContext {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+interface IIsDarkModeContext {
+  IsDarkMode: boolean;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const DarkModeContext = createContext<IDarkModeContext>(null!);
+export const IsDarkModeContext = createContext<IIsDarkModeContext>(null!);
 
 interface IIsCelsiusContext {
   isCelsius: boolean;

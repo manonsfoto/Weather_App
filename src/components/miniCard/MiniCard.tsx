@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { IList } from "../../interface/IDataForecast";
+import { IList } from "../../interfaces/IDataForecast";
 import "./MiniCard.css";
 import { useContext } from "react";
 import { IsCelsiusContext } from "../../context/Context";

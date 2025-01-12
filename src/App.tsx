@@ -9,10 +9,10 @@ import Home from "./pages/home/Home";
 import RootLayout from "./rootLayout/RootLayout";
 import { useState } from "react";
 import SettingsPage from "./pages/settingsPage/SettingsPage";
-import { DarkModeContext, IsCelsiusContext } from "./context/Context";
+import { IsDarkModeContext, IsCelsiusContext } from "./context/Context";
 
 function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [IsDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [isCelsius, setIsCelsius] = useState<boolean>(true);
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -24,11 +24,11 @@ function App() {
   );
   return (
     <>
-      <div className={`${darkMode && "dark"}`}>
+      <div className={`${IsDarkMode && "dark"}`}>
         <IsCelsiusContext.Provider value={{ isCelsius, setIsCelsius }}>
-          <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+          <IsDarkModeContext.Provider value={{ IsDarkMode, setIsDarkMode }}>
             <RouterProvider router={router} />
-          </DarkModeContext.Provider>
+          </IsDarkModeContext.Provider>
         </IsCelsiusContext.Provider>
       </div>
     </>

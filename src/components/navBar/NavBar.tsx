@@ -5,19 +5,39 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ setCityNameInput }) => {
   return (
     <nav className="flex nav">
-      <button type="button" onClick={() => setCityNameInput("Dusseldorf")}>
+      <button
+        type="button"
+        aria-label="Fetch current weather in Düsseldorf"
+        onClick={() => setCityNameInput("Dusseldorf")}
+      >
         Düsseldorf
       </button>
-      <button type="button" onClick={() => setCityNameInput("Busan")}>
+      <button
+        type="button"
+        aria-label="Fetch current weather in Busan"
+        onClick={() => setCityNameInput("Busan")}
+      >
         Busan
       </button>
-      <button type="button" onClick={() => setCityNameInput("Fukuoka")}>
+      <button
+        type="button"
+        aria-label="Fetch current weather in Fukuoka"
+        onClick={() => setCityNameInput("Fukuoka")}
+      >
         Fukuoka
       </button>
-      <button type="button" onClick={() => setCityNameInput("Sydney")}>
+      <button
+        type="button"
+        aria-label="Fetch current weather in Sydney"
+        onClick={() => setCityNameInput("Sydney")}
+      >
         Sydney
       </button>
-      <button type="button" onClick={() => setCityNameInput("Vancouver")}>
+      <button
+        type="button"
+        aria-label="Fetch current weather in Vancouver"
+        onClick={() => setCityNameInput("Vancouver")}
+      >
         Vancouver
       </button>
     </nav>

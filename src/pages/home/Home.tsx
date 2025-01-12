@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import NavBar from "../../components/navBar/NavBar";
 
-import { IDataWeather } from "../../interface/IDataWeather";
+import { IDataWeather } from "../../interfaces/IDataWeather";
 import "./Home.css";
 import useFetch from "../../hooks/useFetch";
 import { getCurrentURL } from "../../utils/api/Api";

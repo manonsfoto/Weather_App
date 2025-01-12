@@ -8,6 +8,7 @@ export const getCurrentURL = (cityName: string, isCelsius: boolean): string => {
   }`;
   return resultURL;
 };
+
 export const getForecastURL = (
   cityName: string,
   isCelsius: boolean

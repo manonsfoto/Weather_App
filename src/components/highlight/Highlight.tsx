@@ -1,4 +1,4 @@
-import { IDataWeather } from "../../interface/IDataWeather";
+import { IDataWeather } from "../../interfaces/IDataWeather";
 import "./Highlight.css";
 import convertTime from "../../utils/function/convertTime";
 import { useContext } from "react";

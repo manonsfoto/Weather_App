@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { IDataWeather } from "../../interface/IDataWeather";
+import { IDataWeather } from "../../interfaces/IDataWeather";
 import "./MainCard.css";
 import { useContext } from "react";
 import { IsCelsiusContext } from "../../context/Context";

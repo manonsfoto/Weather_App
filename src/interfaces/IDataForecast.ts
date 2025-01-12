@@ -3,13 +3,13 @@ export interface IDataForecast {
   message: number;
   cnt: number;
   list: IList[];
-  city: City;
+  city: ICity;
 }
 
-export interface City {
+export interface ICity {
   id: number;
   name: string;
-  coord: Coord;
+  coord: ICoord;
   country: string;
   population: number;
   timezone: number;
@@ -17,29 +17,29 @@ export interface City {
   sunset: number;
 }
 
-export interface Coord {
+export interface ICoord {
   lat: number;
   lon: number;
 }
 
 export interface IList {
   dt: number;
-  main: Main;
+  main: IMain;
   weather: IWeather[];
-  clouds: Clouds;
-  wind: Wind;
+  clouds: IClouds;
+  wind: IWind;
   visibility: number;
   pop: number;
-  rain?: Rain;
-  sys: Sys;
+  rain?: IRain;
+  sys: ISys;
   dt_txt: Date;
 }
 
-export interface Clouds {
+export interface IClouds {
   all: number;
 }
 
-export interface Main {
+export interface IMain {
   temp: number;
   feels_like: number;
   temp_min: number;
@@ -51,11 +51,11 @@ export interface Main {
   temp_kf: number;
 }
 
-export interface Rain {
+export interface IRain {
   "3h": number;
 }
 
-export interface Sys {
+export interface ISys {
   pod: string;
 }
 
@@ -66,7 +66,7 @@ export interface IWeather {
   icon: string;
 }
 
-export interface Wind {
+export interface IWind {
   speed: number;
   deg: number;
   gust: number;
