@@ -4,7 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import "./App.css";
+
 import Home from "./pages/home/Home";
 import RootLayout from "./rootLayout/RootLayout";
 import { useState } from "react";

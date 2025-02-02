@@ -1,5 +1,6 @@
 import SearchIcon from "../../assets/SVG/SearchIcon";
-import IsDarkMode from "../IsDarkMode/IsDarkMode";
+import IsDarkMode from "../darkMode/IsDarkMode";
+
 import "./SearchBar.css";
 interface SearchBarProps {
   setSearchInput: React.Dispatch<React.SetStateAction<string>>;
