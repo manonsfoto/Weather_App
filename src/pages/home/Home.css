@@ -21,9 +21,10 @@
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
     "sidebar maincard highlight"
+    "sidebar whatToWear whatToWear"
     "sidebar forecast forecast";
   gap: 3rem;
 }
@@ -31,10 +32,11 @@
 @media only screen and (max-width: 1278px) {
   .home {
     grid-template-columns: repeat(2, 40rem);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     grid-template-areas:
       "sidebar sidebar"
       "maincard highlight"
+      "whatToWear whatToWear"
       "forecast forecast";
   }
   .stn-forecast {
@@ -61,15 +63,17 @@
 @media only screen and (max-width: 965px) {
   .home {
     grid-template-columns: repeat(1, 50rem);
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
     grid-template-areas:
       "sidebar "
       "maincard "
       " highlight"
+      "whatToWear"
       "forecast ";
   }
 
-  .home .stn-forecast {
+  .home .stn-forecast,
+  .home .stn-whatToWear {
     width: 50rem;
   }
   .home .stn-highlight .wind,
@@ -127,7 +131,8 @@
     width: 100%;
     justify-self: center;
   }
-  .home .stn-forecast {
+  .home .stn-forecast,
+  .home .stn-whatToWear {
     width: 35rem;
   }
 

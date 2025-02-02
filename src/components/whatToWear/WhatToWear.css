@@ -1,0 +1,11 @@
+.stn-whatToWear {
+  border: 3px solid rgba(255, 255, 255, 0.36);
+  width: 80rem;
+  border-radius: 2.4rem;
+  padding: 2.4rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: self-start;
+
+  grid-area: whatToWear;
+}

@@ -10,6 +10,7 @@ import { IsCelsiusContext } from "../../context/Context";
 import MainCard from "../../components/mainCard/MainCard";
 import Forecast from "../../components/forecast/Forecast";
 import Highlight from "../../components/highlight/Highlight";
+import WhatToWear from "../../components/whatToWear/WhatToWear";
 
 const Home = () => {
   const [cityNameInput, setCityNameInput] = useState<string>("dusseldorf");
@@ -33,6 +34,7 @@ const Home = () => {
 
       <MainCard data={dataWeather.data} />
       <Highlight data={dataWeather.data} />
+      <WhatToWear />
       <Forecast cityNameInput={cityNameInput} />
     </div>
   );
