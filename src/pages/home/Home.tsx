@@ -34,7 +34,7 @@ const Home = () => {
 
       <MainCard data={dataWeather.data} />
       <Highlight data={dataWeather.data} />
-      <WhatToWear />
+      <WhatToWear cityNameInput={cityNameInput} />
       <Forecast cityNameInput={cityNameInput} />
     </div>
   );

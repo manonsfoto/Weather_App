@@ -9,3 +9,7 @@
 
   grid-area: whatToWear;
 }
+.stn-whatToWear ul {
+  list-style: none;
+  font-size: 2rem;
+}
