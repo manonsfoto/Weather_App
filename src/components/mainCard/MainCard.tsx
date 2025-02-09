@@ -2,13 +2,31 @@ import { format } from "date-fns";
 import { IDataWeather } from "../../interfaces/IDataWeather";
 import "./MainCard.css";
 import { useContext } from "react";
-import { IsCelsiusContext } from "../../context/Context";
+import {
+  CurrentWeatherConditionContext,
+  FeelsLikeTempCContext,
+  FeelsLikeTempFContext,
+  IsCelsiusContext,
+} from "../../context/Context";
 import LocationIcon from "../../assets/SVG/LocationIcon";
 interface MainCardProps {
   data: IDataWeather;
 }
 const MainCard: React.FC<MainCardProps> = ({ data }) => {
   const { isCelsius, setIsCelsius } = useContext(IsCelsiusContext);
+  const { setFeelsLikeTempC } = useContext(FeelsLikeTempCContext);
+  const { setFeelsLikeTempF } = useContext(FeelsLikeTempFContext);
+  const { setCurrentWeatherCondition } = useContext(
+    CurrentWeatherConditionContext
+  );
+
+  if (isCelsius === true) {
+    setFeelsLikeTempC(Math.round(data.main.feels_like));
+  }
+  if (isCelsius === false) {
+    setFeelsLikeTempF(Math.round(data.main.feels_like));
+  }
+  setCurrentWeatherCondition(data.weather[0].description);
   return (
     <section className="maincard flex">
       <div className="textbox-top flex">

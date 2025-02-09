@@ -13,3 +13,29 @@ interface IIsCelsiusContext {
 }
 
 export const IsCelsiusContext = createContext<IIsCelsiusContext>(null!);
+
+interface IFeelsLikeTempCContext {
+  feelsLikeTempC: number | null;
+  setFeelsLikeTempC: React.Dispatch<React.SetStateAction<number | null>>;
+}
+
+export const FeelsLikeTempCContext = createContext<IFeelsLikeTempCContext>(
+  null!
+);
+
+interface IFeelsLikeTempFContext {
+  feelsLikeTempF: number | null;
+  setFeelsLikeTempF: React.Dispatch<React.SetStateAction<number | null>>;
+}
+
+export const FeelsLikeTempFContext = createContext<IFeelsLikeTempFContext>(
+  null!
+);
+
+interface ICurrentWeatherConditionContext {
+  currentWeatherCondition: string;
+  setCurrentWeatherCondition: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const CurrentWeatherConditionContext =
+  createContext<ICurrentWeatherConditionContext>(null!);

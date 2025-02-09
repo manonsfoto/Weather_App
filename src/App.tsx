@@ -9,11 +9,23 @@ import Home from "./pages/home/Home";
 import RootLayout from "./rootLayout/RootLayout";
 import { useState } from "react";
 import SettingsPage from "./pages/settingsPage/SettingsPage";
-import { IsDarkModeContext, IsCelsiusContext } from "./context/Context";
+import {
+  IsDarkModeContext,
+  IsCelsiusContext,
+  FeelsLikeTempCContext,
+  FeelsLikeTempFContext,
+  CurrentWeatherConditionContext,
+} from "./context/Context";
 
 function App() {
   const [IsDarkMode, setIsDarkMode] = useState<boolean>(false);
+
   const [isCelsius, setIsCelsius] = useState<boolean>(true);
+  const [feelsLikeTempC, setFeelsLikeTempC] = useState<number | null>(null);
+  const [feelsLikeTempF, setFeelsLikeTempF] = useState<number | null>(null);
+  const [currentWeatherCondition, setCurrentWeatherCondition] =
+    useState<string>("");
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
@@ -25,11 +37,25 @@ function App() {
   return (
     <>
       <div className={`${IsDarkMode && "dark"}`}>
-        <IsCelsiusContext.Provider value={{ isCelsius, setIsCelsius }}>
-          <IsDarkModeContext.Provider value={{ IsDarkMode, setIsDarkMode }}>
-            <RouterProvider router={router} />
-          </IsDarkModeContext.Provider>
-        </IsCelsiusContext.Provider>
+        <CurrentWeatherConditionContext.Provider
+          value={{ currentWeatherCondition, setCurrentWeatherCondition }}
+        >
+          <FeelsLikeTempFContext.Provider
+            value={{ feelsLikeTempF, setFeelsLikeTempF }}
+          >
+            <FeelsLikeTempCContext.Provider
+              value={{ feelsLikeTempC, setFeelsLikeTempC }}
+            >
+              <IsCelsiusContext.Provider value={{ isCelsius, setIsCelsius }}>
+                <IsDarkModeContext.Provider
+                  value={{ IsDarkMode, setIsDarkMode }}
+                >
+                  <RouterProvider router={router} />
+                </IsDarkModeContext.Provider>
+              </IsCelsiusContext.Provider>
+            </FeelsLikeTempCContext.Provider>
+          </FeelsLikeTempFContext.Provider>
+        </CurrentWeatherConditionContext.Provider>
       </div>
     </>
   );

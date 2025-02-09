@@ -1,0 +1,132 @@
+{
+  "clothing_recommendations": [
+    {
+      "temperature_c": "28+",
+      "temperature_f": "82+",
+      "base_layer": [
+        "Sleeveless tops",
+        "T-shirts",
+        "Shorts",
+        "Skirts",
+        "Linen shirts"
+      ],
+      "insulating_layer": [],
+      "outer_layer": [],
+      "accessories": ["Sunglasses", "Hat (for sun)"]
+    },
+    {
+      "temperature_c": "23-27",
+      "temperature_f": "73-81",
+      "base_layer": [
+        "Short-sleeve shirts",
+        "Thin blouses",
+        "T-shirts",
+        "Shorts",
+        "Chinos"
+      ],
+      "insulating_layer": ["Light cardigan (optional)"],
+      "outer_layer": [],
+      "accessories": ["Sunglasses"]
+    },
+    {
+      "temperature_c": "20-22",
+      "temperature_f": "68-72",
+      "base_layer": [
+        "T-shirts",
+        "Long-sleeve shirts",
+        "Blouses",
+        "Casual pants",
+        "Chinos"
+      ],
+      "insulating_layer": ["Light sweatshirt", "Thin sweater"],
+      "outer_layer": [],
+      "accessories": []
+    },
+    {
+      "temperature_c": "17-19",
+      "temperature_f": "62-67",
+      "base_layer": ["T-shirts", "Long-sleeve shirts", "Light pants"],
+      "insulating_layer": ["Hoodie", "Sweater", "Light cardigan"],
+      "outer_layer": ["Light jacket (optional)"],
+      "accessories": []
+    },
+    {
+      "temperature_c": "12-16",
+      "temperature_f": "54-61",
+      "base_layer": ["Long-sleeve shirts", "T-shirts", "Jeans", "Tights"],
+      "insulating_layer": ["Hoodie", "Sweater", "Cardigan"],
+      "outer_layer": ["Denim jacket", "Light jacket"],
+      "accessories": []
+    },
+    {
+      "temperature_c": "9-11",
+      "temperature_f": "48-53",
+      "base_layer": [
+        "Long-sleeve shirts",
+        "Base layer (HeatTech optional)",
+        "Jeans"
+      ],
+      "insulating_layer": ["Fleece", "Sweatshirt"],
+      "outer_layer": ["Trench coat", "Field jacket"],
+      "accessories": ["Light scarf", "Thin gloves"]
+    },
+    {
+      "temperature_c": "5-8",
+      "temperature_f": "41-47",
+      "base_layer": ["HeatTech base layer", "Long-sleeve shirts", "Jeans"],
+      "insulating_layer": ["Fleece", "Thick sweater"],
+      "outer_layer": ["Wool coat", "Leather jacket"],
+      "accessories": ["Warm scarf", "Gloves"]
+    },
+    {
+      "temperature_c": "0-4",
+      "temperature_f": "32-40",
+      "base_layer": ["Thermal base layer", "Long-sleeve shirts", "Pants"],
+      "insulating_layer": ["Fleece-lined clothing"],
+      "outer_layer": ["Padded coat", "Thick wool coat"],
+      "accessories": ["Hat", "Gloves", "Scarf"]
+    },
+    {
+      "temperature_c": "-5 to -9",
+      "temperature_f": "15-31",
+      "base_layer": [
+        "Thermal base layer",
+        "Long-sleeve shirts",
+        "Fleece-lined pants"
+      ],
+      "insulating_layer": ["Heavy fleece", "Insulated sweater"],
+      "outer_layer": ["Down jacket", "Padded coat"],
+      "accessories": ["Hat", "Thermal gloves", "Scarf"]
+    },
+    {
+      "temperature_c": "-10 to -14",
+      "temperature_f": "6-14",
+      "base_layer": ["Thermal underwear", "Base layers", "Fleece-lined pants"],
+      "insulating_layer": ["Heavy fleece", "Wool sweater"],
+      "outer_layer": ["Thick down coat", "Windproof jacket"],
+      "accessories": ["Hat", "Insulated gloves", "Scarf"]
+    },
+    {
+      "temperature_c": "Below -15",
+      "temperature_f": "Below 5",
+      "base_layer": ["Full thermal layers", "Fleece-lined pants"],
+      "insulating_layer": ["Double fleece", "Heavy wool layers"],
+      "outer_layer": ["Extreme cold coat (expedition style)"],
+      "accessories": ["Hat", "Scarf", "2 pairs of gloves", "Neck gaiter"]
+    }
+  ],
+  "special_conditions": {
+    "rainy": {
+      "outer_layer": ["Waterproof jacket"],
+      "accessories": ["Umbrella", "Waterproof shoes"]
+    },
+    "windy": {
+      "outer_layer": ["Windbreaker"],
+      "accessories": ["Scarf for face protection"]
+    },
+    "snowy_icy": {
+      "outer_layer": ["Waterproof boots"],
+      "accessories": ["Crampons (if icy)", "Thermal socks"]
+    }
+  }
+}
