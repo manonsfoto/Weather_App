@@ -1,12 +1,8 @@
 import { FC, useContext, useEffect, useState } from "react";
 import "./WhatToWear.css";
-import {
-  CurrentWeatherConditionContext,
-  FeelsLikeTempCContext,
-  FeelsLikeTempFContext,
-  IsCelsiusContext,
-} from "../../context/Context";
+import { IsCelsiusContext } from "../../context/Context";
 import { clothingData } from "../../utils/api/clothing_recommendations";
+import { IDataWeather } from "../../interfaces/IDataWeather";
 type TSpecial = { outer_layer: string[]; accessories: string[] };
 type TClothing = {
   base: string[];
@@ -16,81 +12,47 @@ type TClothing = {
 };
 
 interface WhatToWearProps {
+  data: IDataWeather;
   cityNameInput: string;
 }
 
-const WhatToWear: FC<WhatToWearProps> = ({ cityNameInput }) => {
+const WhatToWear: FC<WhatToWearProps> = ({ data, cityNameInput }) => {
   const { isCelsius } = useContext(IsCelsiusContext);
-  const { feelsLikeTempC } = useContext(FeelsLikeTempCContext);
-  const { feelsLikeTempF } = useContext(FeelsLikeTempFContext);
-  const { currentWeatherCondition } = useContext(
-    CurrentWeatherConditionContext
-  );
   const [special, setSpecial] = useState<TSpecial | null>(null);
   const [clothing, setClothing] = useState<TClothing | null>(null);
 
   function getClothingSuggestion() {
-    if (isCelsius === true) {
-      if (feelsLikeTempC) {
-        const clothing = clothingData.clothing_recommendations.find(
-          (c) => feelsLikeTempC >= c.temp_c
-        );
+    const feelsLike = Math.round(data.main.feels_like);
+    if (!feelsLike) return;
 
-        if (currentWeatherCondition.includes("rain")) {
-          setSpecial(clothingData.special_conditions.rain);
-        } else if (currentWeatherCondition.includes("thunderstorm")) {
-          setSpecial(clothingData.special_conditions.rain);
-        } else if (currentWeatherCondition.includes("drizzle")) {
-          setSpecial(clothingData.special_conditions.rain);
-        } else if (currentWeatherCondition.includes("snow")) {
-          setSpecial(clothingData.special_conditions.snow);
-        } else {
-          setSpecial(null);
-        }
-        setClothing({
-          base: clothing?.base_layer || [],
-          insulating: clothing?.insulating_layer || [],
-          outer: clothing?.outer_layer || [],
-          accessories: [
-            ...(clothing?.accessories || []),
-            ...(special?.accessories || []),
-          ],
-        });
-      }
-    }
-    if (isCelsius === false) {
-      if (feelsLikeTempF) {
-        const clothing = clothingData.clothing_recommendations.find(
-          (f) => feelsLikeTempF >= f.temp_f
-        );
+    const tempKey = isCelsius ? "temp_c" : "temp_f";
+    const clothing = clothingData.clothing_recommendations.find(
+      (c) => feelsLike >= c[tempKey]
+    );
 
-        if (currentWeatherCondition.includes("rain")) {
-          setSpecial(clothingData.special_conditions.rain);
-        } else if (currentWeatherCondition.includes("thunderstorm")) {
-          setSpecial(clothingData.special_conditions.rain);
-        } else if (currentWeatherCondition.includes("drizzle")) {
-          setSpecial(clothingData.special_conditions.rain);
-        } else if (currentWeatherCondition.includes("snow")) {
-          setSpecial(clothingData.special_conditions.snow);
-        } else {
-          setSpecial(null);
-        }
-        setClothing({
-          base: clothing?.base_layer || [],
-          insulating: clothing?.insulating_layer || [],
-          outer: clothing?.outer_layer || [],
-          accessories: [
-            ...(clothing?.accessories || []),
-            ...(special?.accessories || []),
-          ],
-        });
-      }
-    }
+    setSpecial(getSpecialCondition(data.weather[0].description));
+
+    setClothing({
+      base: clothing?.base_layer || [],
+      insulating: clothing?.insulating_layer || [],
+      outer: clothing?.outer_layer || [],
+      accessories: [
+        ...(clothing?.accessories || []),
+        ...(special?.accessories || []),
+      ],
+    });
+  }
+
+  function getSpecialCondition(description: string) {
+    if (/rain|thunderstorm|drizzle/.test(description))
+      return clothingData.special_conditions.rain;
+    if (/snow/.test(description)) return clothingData.special_conditions.snow;
+    return null;
   }
 
   useEffect(() => {
     getClothingSuggestion();
-  }, [cityNameInput]);
+  }, [data, cityNameInput]);
 
   return (
     <section className="stn-whatToWear">
@@ -98,17 +60,22 @@ const WhatToWear: FC<WhatToWearProps> = ({ cityNameInput }) => {
 
       <ul>
         <li>
-          <strong>Base Layer:</strong> {clothing?.base.join(", ")}
+          <h5>Base Layer</h5> <p>{clothing?.base.join(", ")}</p>
         </li>
         <li>
-          <strong>Insulating Layer:</strong> {clothing?.insulating.join(", ")}
+          <h5>Insulating Layer</h5> <p>{clothing?.insulating.join(", ")}</p>
         </li>
-        <li>
-          <strong>Outer Layer:</strong> {clothing?.outer.join(", ")}
-        </li>
-        <li>
-          <strong>Accessories:</strong> {clothing?.accessories.join(", ")}
-        </li>
+        {clothing?.outer.join(", ") && (
+          <li>
+            <h5>Outer Layer</h5> <p>{clothing?.outer.join(", ")}</p>
+          </li>
+        )}
+        {clothing?.accessories.join(", ") && (
+          <li>
+            <h5>Accessories</h5>
+            <p> {clothing?.accessories.join(", ")}</p>
+          </li>
+        )}
       </ul>
     </section>
   );

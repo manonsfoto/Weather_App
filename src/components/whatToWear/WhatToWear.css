@@ -12,4 +12,33 @@
 .stn-whatToWear ul {
   list-style: none;
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(12, 12, 12);
+}
+.stn-whatToWear li h5 {
+  font-size: 16px;
+}
+.stn-whatToWear li p {
+  font-size: 18px;
+}
+.stn-whatToWear li {
+  padding: 1.6rem 2.2rem;
+  border-radius: 1.6rem;
+
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+
+  border: 1px solid rgba(255, 255, 255, 0.93);
+
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+}
+.dark-mode .stn-whatToWear li {
+  background: rgba(48, 48, 48, 0.384);
+  border: 1px solid rgba(255, 255, 255, 0.411);
 }
